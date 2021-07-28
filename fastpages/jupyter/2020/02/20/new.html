@@ -4,12 +4,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Title | Machine Learning Workflow</title>
+<title>Deploying a Machine Learning Model Tutorial | Machine Learning Workflow</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Title" />
+<meta property="og:title" content="Deploying a Machine Learning Model Tutorial" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Awesome summary" />
-<meta property="og:description" content="Awesome summary" />
+<meta name="description" content="This tutorial is all about deploying a real machine learning model. More precisely, we will deploy a computer vision model trained to detect common objects in pictures." />
+<meta property="og:description" content="This tutorial is all about deploying a real machine learning model. More precisely, we will deploy a computer vision model trained to detect common objects in pictures." />
 <link rel="canonical" href="https://abanza.github.io/mlops/fastpages/jupyter/2020/02/20/new.html" />
 <meta property="og:url" content="https://abanza.github.io/mlops/fastpages/jupyter/2020/02/20/new.html" />
 <meta property="og:site_name" content="Machine Learning Workflow" />
@@ -17,7 +17,7 @@
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2020-02-20T00:00:00-06:00" />
 <script type="application/ld+json">
-{"datePublished":"2020-02-20T00:00:00-06:00","url":"https://abanza.github.io/mlops/fastpages/jupyter/2020/02/20/new.html","@type":"BlogPosting","image":"https://abanza.github.io/mlops/images/some_folder/your_image.png","headline":"Title","dateModified":"2020-02-20T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://abanza.github.io/mlops/fastpages/jupyter/2020/02/20/new.html"},"description":"Awesome summary","@context":"https://schema.org"}</script>
+{"datePublished":"2020-02-20T00:00:00-06:00","url":"https://abanza.github.io/mlops/fastpages/jupyter/2020/02/20/new.html","@type":"BlogPosting","image":"https://abanza.github.io/mlops/images/some_folder/your_image.png","headline":"Deploying a Machine Learning Model Tutorial","dateModified":"2020-02-20T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://abanza.github.io/mlops/fastpages/jupyter/2020/02/20/new.html"},"description":"This tutorial is all about deploying a real machine learning model. More precisely, we will deploy a computer vision model trained to detect common objects in pictures.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/mlops/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://abanza.github.io/mlops/feed.xml" title="Machine Learning Workflow" /><link rel="shortcut icon" type="image/x-icon" href="/mlops/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -72,7 +72,7 @@ window.onload = wrap_img;
         <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Title</h1><p class="page-description">Awesome summary</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-02-20T00:00:00-06:00" itemprop="datePublished">
+    <h1 class="post-title p-name" itemprop="name headline">Deploying a Machine Learning Model Tutorial</h1><p class="page-description">This tutorial is all about deploying a real machine learning model. More precisely, we will deploy a computer vision model trained to detect common objects in pictures.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-02-20T00:00:00-06:00" itemprop="datePublished">
         Feb 20, 2020
       </time>
        • <span class="read-time" title="Estimated read time">
@@ -130,7 +130,20 @@ window.onload = wrap_img;
         
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Welcome to my blog!</p>
+<h1 id="Deploying-a-Machine-Learning-Model-Tutorial">Deploying a Machine Learning Model Tutorial<a class="anchor-link" href="#Deploying-a-Machine-Learning-Model-Tutorial"> </a></h1><p>This tutorial is all about deploying a real machine learning model. More precisely, we will deploy a computer vision model trained to detect common objects in pictures. Deploying a model is one of the last steps in a machine learning workflow. This tutorial uses a pretrained model called <code>YOLOV3</code>. You only look once (YOLO) is a state-of-the-art, real-time object detection system. The model is fast and accurate. Moreover, you can easily tradeoff between speed and accuracy simply by changing the size of the model, no retraining required!</p>
+<p>The tasks in this tutorial are as follow:</p>
+<ol>
+<li>Exploring the images in the data set</li>
+<li>Analyzing the YOLO model</li>
+<li>Deploy the model using <code>fastAPI</code></li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Object-Detection-with-YOLOV3">Object Detection with YOLOV3<a class="anchor-link" href="#Object-Detection-with-YOLOV3"> </a></h2><h3 id="Exploring-the-images-in-the-data-set">Exploring the images in the data set<a class="anchor-link" href="#Exploring-the-images-in-the-data-set"> </a></h3><p>This will give us an insight on what type of common objects are present for detection. These images are part of the <code>ImageNet</code> dataset.</p>
 
 </div>
 </div>
